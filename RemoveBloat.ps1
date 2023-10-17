@@ -334,7 +334,6 @@ switch ($locale) {
         "Microsoft.XboxSpeechToTextOverlay"
         "Microsoft.ZuneMusic"
         "Microsoft.ZuneVideo"
-        "MicrosoftTeams"
         "Microsoft.YourPhone"
         "Microsoft.XboxGamingOverlay_5.721.10202.0_neutral_~_8wekyb3d8bbwe"
         "Microsoft.GamingApp"
@@ -746,21 +745,6 @@ else {
     #Remove Parental Controls
    Get-AppxPackage -allusers Microsoft.Windows.ParentalControls | Remove-AppxPackage 
    write-host "Removed Parental Controls"
-
-   #Remove Teams Chat
-$MSTeams = "MicrosoftTeams"
-
-$WinPackage = Get-AppxPackage -allusers | Where-Object {$_.Name -eq $MSTeams}
-$ProvisionedPackage = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -eq $WinPackage }
-If ($null -ne $WinPackage) 
-{
-    Remove-AppxPackage  -Package $WinPackage.PackageFullName
-} 
-
-If ($null -ne $ProvisionedPackage) 
-{
-    Remove-AppxProvisionedPackage -online -Packagename $ProvisionedPackage.Packagename
-}
 
 ##Tweak reg permissions
 invoke-webrequest -uri "https://github.com/andrew-s-taylor/public/raw/main/De-Bloat/SetACL.exe" -outfile "C:\Windows\Temp\SetACL.exe"
