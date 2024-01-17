@@ -334,7 +334,6 @@ switch ($locale) {
         "Microsoft.XboxSpeechToTextOverlay"
         "Microsoft.ZuneMusic"
         "Microsoft.ZuneVideo"
-        "Microsoft.YourPhone"
         "Microsoft.XboxGamingOverlay_5.721.10202.0_neutral_~_8wekyb3d8bbwe"
         "Microsoft.GamingApp"
         "SpotifyAB.SpotifyMusic"
